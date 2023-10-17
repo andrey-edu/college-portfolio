@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.filters {
+  display: flex;
+  justify-content: flex-end;
+  gap: calc(var(--offset-base-size) * 5);
+}
