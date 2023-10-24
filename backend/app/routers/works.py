@@ -36,13 +36,7 @@ def get_all_works(db: Session=Depends(get_db)):
 
 @router.post("/", response_description="Create new work", response_model=Work, status_code=status.HTTP_201_CREATED)
 def create_work(work: BaseWork, db: Session=Depends(get_db)):
-    new_work = WorksModel(
-      date = work.date,
-      title = work.title,
-      description = work.description,
-      image = work.image,
-      author = work.author  
-    )
+    new_work = WorksModel(**work.model_dump())
 
     db.add(new_work)
 

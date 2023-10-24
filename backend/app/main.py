@@ -9,7 +9,7 @@ from .config.db import Base
 from .config.db import engine
 
 # Подключаем роутеры
-from .routers import works
+from .routers import works, authors
 
 
 app = FastAPI(
@@ -24,6 +24,7 @@ Base.metadata.create_all(bind=engine)
 
 # Добавляем подключенный роутер в объект app
 app.include_router(works.router)
+app.include_router(authors.router)
 
 
 
