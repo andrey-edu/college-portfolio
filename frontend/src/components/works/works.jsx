@@ -4,15 +4,15 @@ import Work from "./work"
 
 import styles from "./works.module.css";
 
-function Works(props) {
+function Works({ works }) {
   return (
-    <div class={`${styles.container} mt-5`}>
-      <div class={styles.works}>
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-
+    <div className={`${styles.container} mt-5`}>
+      <div className={styles.works}>
+        {
+          works.map((work) =>
+            <Work key={work.id} image={work.image} title={work.title} />
+          )
+        }
       </div>
     </div>
   );

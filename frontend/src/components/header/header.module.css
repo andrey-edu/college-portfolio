@@ -8,5 +8,6 @@
 .filters {
   display: flex;
   justify-content: flex-end;
-  gap: calc(var(--offset-base-size) * 5);
+  flex-wrap: wrap;
+  gap: calc(var(--offset-base-size) * 2);
 }
